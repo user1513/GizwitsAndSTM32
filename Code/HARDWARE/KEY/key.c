@@ -1,31 +1,28 @@
 #include "key.h"
-#define KEYTIMEOUT    100// 200*10MS = 1S
 
-uint16_t key1TimeOut = 0;			//定义超时静态变量
+#define KEYTIMEOUT 1000
+
 uint8_t previous_key1 = 1 ;		//定义存储上一次按键值静态变量
 uint8_t key1_flag = 0;			//定义按键状态静态变量
 	
 uint8_t previous_key2 = 1 ;		//定义存储上一次按键值静态变量
 uint8_t key2_flag = 0;			//定义按键状态静态变量
 
-uint8_t previous_key3 = 1 ;		//定义存储上一次按键值静态变量
-uint8_t key3_flag = 0;			//定义按键状态静态变量
 
+uint8_t previous_key4 = 1 ;		//定义存储上一次按键值静态变量
+uint8_t key4_flag = 0;			//定义按键状态静态变量
 
 //按键io初始化
 void Key_Io_Init(void)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOA, ENABLE); //使能PD 端口时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB , ENABLE); //使能PD 端口时钟
 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14|GPIO_Pin_15;		//GPIO_Pin_14,15		     
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9;		//GPIO_Pin_14,15		     
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 		 		//输入上拉
-	GPIO_Init(GPIOC, &GPIO_InitStructure);					       //根据设定参数初始化GPIOC.14,15
+	GPIO_Init(GPIOB, &GPIO_InitStructure);					       //根据设定参数初始化GPIOC.14,15
 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;					//GPIO_Pin_2		     
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 		 		//输入上拉
-	GPIO_Init(GPIOA, &GPIO_InitStructure);					       //根据设定参数初始化GPIOC.14,15	
 }
 
 
@@ -34,10 +31,10 @@ void Key_Io_Init(void)
 uint8_t Key_Event_Handler(void)
 {
 	uint8_t key_val = 1;
-	key_val |= 1 << BUTTONLONGPRESS(1, MIDDLE_KEY, &key1TimeOut, &previous_key1, &key1_flag);   //获取中间按键状态
-	key_val |= 1 << BUTTONPOINTSMOVE(3, ABOVE_KEY, &previous_key2, &key2_flag);					//获取上面按键状态
-	key_val |= 1 << BUTTONPOINTSMOVE(4, BELOW_KEY, &previous_key3, &key3_flag);					//获取下间按键状态
-	return key_val;
+	key_val |= 1 << BUTTONPOINTSMOVE(1, KEY_1, &previous_key1, &key1_flag);   //3				
+	key_val |= 1 << BUTTONPOINTSMOVE(2, KEY_2, &previous_key2, &key2_flag);	  //5	
+	key_val |= 1 << BUTTONPOINTSMOVE(4, KEY_4, &previous_key4, &key4_flag);	  //17
+	return key_val - 1;
 }
 
 

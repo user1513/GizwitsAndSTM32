@@ -9,6 +9,8 @@
 dataPoint_t currentDataPoint;
 
 extern gizwitsProtocol_t gizwitsProtocol;
+extern u8 display_status;
+extern u8 Water_Temp_status;
 //WIFI连接状态
 //wifi_sta 0: 断开
 //         1: 已连接
@@ -31,11 +33,11 @@ _bool Task500MsEventFlag = TRUE;
 	u8 wifi_con=0;//记录wifi连接状态 1:连接 0:断开
 	u8 temperature;  	    
 	u8 humidity;    
-	u8 key_val = 0;
 	delay_init();	    	 //延时函数初始化	
 	//KEY_Init();	 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	Periph_Init();		  		//初始化与LED连接的硬件接口 
+	 Key_Io_Init();
 	BUZEER_DISABLE;
 	uart_init(115200);
 	Gizwits_Init();         //协议初始化
@@ -62,70 +64,104 @@ _bool Task500MsEventFlag = TRUE;
 	OLED_ShowCHinese(18 * 5, 6, 14);
 	OLED_ShowCHinese(18 * 6, 6, 15);
 	FuncReg(&OledDisplayTimeFlag, 5000, TRUE);
-//	OLED_ShowCHinese(18 * 5, 0, 5);
-//	OLED_ShowCHinese(18 * 6, 0, 6); 
-//	OLED_ShowCHinese(18 * 7, 0, 7);
-//	gizwitsSetMode(WIFI_RESET_MODE);//WIFI复位 
-//	wifi_sta=0;//标志wifi已断开
 	while(1)
 	{
-		switch(key_val)
+		if(KEY_3 != 0)
 		{
-			case 0:
-			if(OledDisplayTimeFlag == TRUE)
-			{	
-				OledDisplayTimeFlag = FALSE;
-				if(gizwitsProtocol.TimeNTP.year %100 /10  == 7)//检测是否接收到网络时间
-					FuncReg(&OledDisplayTimeFlag, 500, TRUE);
-				else
-				{
-					OLED_Clear_static(1, 2, 7);
-					FuncReg(&OledDisplayTimeFlag, 10000, TRUE);
-					OLED_Show_32_32(16*2-8,2,gizwitsProtocol.TimeNTP.hour / 10 + '0');
-					OLED_Show_32_32(16*3-8,2,gizwitsProtocol.TimeNTP.hour % 10 + '0');
-					OLED_Show_32_32(16*4-8,2,':');
-					OLED_Show_32_32(16*5-8,2,gizwitsProtocol.TimeNTP.minute / 10 + '0');
-					OLED_Show_32_32(16*6-8,2,gizwitsProtocol.TimeNTP.minute % 10 + '0');
-					OLED_ShowChar(32,	  6, gizwitsProtocol.TimeNTP.year %100 /10 + '0',16);
-					OLED_ShowChar(32+8*1, 6, gizwitsProtocol.TimeNTP.year % 10 + '0',16);
-					OLED_ShowChar(32+8*2, 6, '-',16);
-					OLED_ShowChar(32+8*3, 6, gizwitsProtocol.TimeNTP.month / 10 + '0',16);
-					OLED_ShowChar(32+8*4, 6, gizwitsProtocol.TimeNTP.month % 10 + '0',16);
-					OLED_ShowChar(32+8*5, 6, '-',16);
-					OLED_ShowChar(32+8*6, 6, gizwitsProtocol.TimeNTP.day / 10 + '0',16);
-					OLED_ShowChar(32+8*7, 6, gizwitsProtocol.TimeNTP.day % 10 + '0',16);
-				}
-			}
-			OledDisplayParamFlag = TRUE;
-			break;
-			case 1:
+			switch(display_status)
 			{
-				if(OledDisplayParamFlag == TRUE)
-				{
-					OledDisplayParamFlag = FALSE;
-					OLED_Clear_static(2, 2, 7);
-					FuncReg(&OledDisplayParamFlag, 200, TRUE);
-					OLED_ShowCHinese(18 * 0, 2, 16);
-					OLED_ShowCHinese(18 * 1, 2, 17);
-					OLED_ShowChar(18 * 2, 2, ':',16);
-					OLED_ShowCHinese(18 * 6, 2, 21);
-					OLED_ShowNum(18 * 3, 2, temperature, 3, 16);
-					
-					OLED_ShowCHinese(18 * 0, 4, 18);
-					OLED_ShowCHinese(18 * 1, 4, 19);
-					OLED_ShowChar(18 * 2, 4, ':',16);
-					OLED_ShowChar(18 * 6, 4, '%',16);
-					OLED_ShowNum(18 * 3, 4, humidity, 3, 16);
-					
-					OLED_ShowChar(18 * 0, 6, 'P',16);
-					OLED_ShowChar(18 * 1, 6, 'H',16);
-					OLED_ShowChar(18 * 2, 6, ':',16);
-					OLED_ShowNum(18 * 3, 6, ADC_Val[0], 4, 16);
-					
+				case 0:
+				if(OledDisplayTimeFlag == TRUE)
+				{	
+					OledDisplayTimeFlag = FALSE;
+					if(gizwitsProtocol.TimeNTP.year %100 /10  == 7)//检测是否接收到网络时间
+						FuncReg(&OledDisplayTimeFlag, 500, TRUE);
+					else
+					{
+						OLED_Clear_static(1, 2, 7);
+						FuncReg(&OledDisplayTimeFlag, 10000, TRUE);
+						OLED_Show_32_32(16*2-8,2,gizwitsProtocol.TimeNTP.hour / 10 + '0');
+						OLED_Show_32_32(16*3-8,2,gizwitsProtocol.TimeNTP.hour % 10 + '0');
+						OLED_Show_32_32(16*4-8,2,':');
+						OLED_Show_32_32(16*5-8,2,gizwitsProtocol.TimeNTP.minute / 10 + '0');
+						OLED_Show_32_32(16*6-8,2,gizwitsProtocol.TimeNTP.minute % 10 + '0');
+						OLED_ShowChar(32,	  6, gizwitsProtocol.TimeNTP.year %100 /10 + '0',16);
+						OLED_ShowChar(32+8*1, 6, gizwitsProtocol.TimeNTP.year % 10 + '0',16);
+						OLED_ShowChar(32+8*2, 6, '-',16);
+						OLED_ShowChar(32+8*3, 6, gizwitsProtocol.TimeNTP.month / 10 + '0',16);
+						OLED_ShowChar(32+8*4, 6, gizwitsProtocol.TimeNTP.month % 10 + '0',16);
+						OLED_ShowChar(32+8*5, 6, '-',16);
+						OLED_ShowChar(32+8*6, 6, gizwitsProtocol.TimeNTP.day / 10 + '0',16);
+						OLED_ShowChar(32+8*7, 6, gizwitsProtocol.TimeNTP.day % 10 + '0',16);
+					}
 				}
-				OledDisplayTimeFlag = TRUE;
+				OledDisplayParamFlag = TRUE;
 				break;
+				case 1:
+				{
+					if(OledDisplayParamFlag == TRUE)
+					{
+						OledDisplayParamFlag = FALSE;
+						OLED_Clear_static(2, 2, 7);
+						FuncReg(&OledDisplayParamFlag, 200, TRUE);
+						OLED_ShowCHinese(18 * 0, 2, 16);
+						OLED_ShowCHinese(18 * 1, 2, 17);
+						OLED_ShowChar(18 * 2, 2, ':',16);
+						OLED_ShowCHinese(18 * 6, 2, 21);
+						OLED_ShowNum(18 * 3, 2, temperature, 3, 16);
+						
+						OLED_ShowCHinese(18 * 0, 4, 18);
+						OLED_ShowCHinese(18 * 1, 4, 19);
+						OLED_ShowChar(18 * 2, 4, ':',16);
+						OLED_ShowChar(18 * 6, 4, '%',16);
+						OLED_ShowNum(18 * 3, 4, humidity, 3, 16);
+						
+						OLED_ShowChar(18 * 0, 6, 'P',16);
+						OLED_ShowChar(18 * 1, 6, 'H',16);
+						OLED_ShowChar(18 * 2, 6, ':',16);
+						OLED_ShowNum(18 * 3, 6, ADC_Val[0], 4, 16);
+						
+					}
+					break;
+				}
+				case 2:
+				{
+					OledDisplayTimeFlag = TRUE;
+					OLED_Clear_static(3, 2, 7);
+					OLED_ShowCHinese(18 * 0, 2, 22);
+					OLED_ShowCHinese(18 * 1, 2, 23);
+					OLED_ShowCHinese(18 * 2, 2, 24);
+					OLED_ShowCHinese(18 * 3, 2, 25);
+					OLED_ShowChar(18 * 4, 2, ':',16);
+					switch(Water_Temp_status)
+					{
+						case 0:OLED_ShowNum(18 * 5, 4, 25, 2, 16);break;
+						case 1:OLED_ShowNum(18 * 5, 4, 50, 2, 16);break;
+						case 2:OLED_ShowNum(18 * 5, 4, 75, 2, 16);break;
+						default :break;
+					}
+					OLED_ShowCHinese(18 * 6, 4, 21);
+					
+				}	
+					break;			
 			}
+		}
+		else
+		{
+			OLED_Clear_static(4, 2, 7);
+			OledDisplayTimeFlag = TRUE;
+			OledDisplayParamFlag = TRUE;
+			OLED_ShowCHinese(18 * 0, 2, 26);
+			OLED_ShowCHinese(18 * 1, 2, 27);
+			OLED_ShowCHinese(18 * 2, 2, 28);
+			OLED_ShowCHinese(18 * 3, 2, 29);
+			OLED_ShowCHinese(18 * 1, 4, 30);
+			OLED_ShowCHinese(18 * 2, 4, 31);
+			OLED_ShowCHinese(18 * 3, 4, 32);
+			OLED_ShowCHinese(18 * 4, 4, 33);
+			OLED_ShowCHinese(18 * 5, 4, 34);
+			OLED_ShowChar(18 * 6, 4, '.',16);
+			OLED_ShowChar(18 * 7 - 8, 4, '.',16);
 		}
 		
 		if(Task500MsEventFlag == TRUE)

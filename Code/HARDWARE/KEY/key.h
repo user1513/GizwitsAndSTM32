@@ -3,10 +3,10 @@
 
 #include "sys.h"
 
-#define MIDDLE_KEY 	PCin(14)   	//中间按键
-#define ABOVE_KEY	PAin(2)   	//上面按键
-#define BELOW_KEY 	PCin(15)   	//下面按键
-
+#define KEY_1 	PBin(6)   	//中间按键
+#define KEY_2	PBin(7)   	//上面按键
+#define KEY_3 	PBin(8)   	//下面按键
+#define KEY_4 	PBin(9)   	//下面按键
 
 /**********************************************************************************************************
 ** Function name        :   BUTTONPOINTSMOVE

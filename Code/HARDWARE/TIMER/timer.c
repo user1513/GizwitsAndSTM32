@@ -47,19 +47,44 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 }
 //定时器3中断服务程序
 int num_500ms = 0;
+u8 delay_10ms = 0;
+u8 display_status = 0;
+u8 Water_Temp_status = 0;
 void TIM3_IRQHandler(void)   //TIM3中断
 {
+	u8 key_status = 0;
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
 	{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
 		gizTimerMs();
 		FuncTimeTravers_ISR();
-		num_500ms ++;
-		if(num_500ms >= 500)
+		if(++num_500ms >= 500)
 		{
 			num_500ms = 0;
 			led = ~led;
 		}
+		if(++delay_10ms >= 10)
+		{
+			delay_10ms = 0;
+			 key_status = Key_Event_Handler();
+			if(key_status == 2)
+			{
+				display_status ++;
+				if(display_status == 3)
+					display_status = 0;
+			}
+			if(key_status == 4 && display_status == 2)
+			{
+				Water_Temp_status ++;
+				if(Water_Temp_status == 3)
+					Water_Temp_status = 0;
+			}
+			if(key_status == 0x10)
+			{
+				gizwitsSetMode(WIFI_RESET_MODE);//WIFI复位 
+			}	
+		}
+		
 	}
 }
 

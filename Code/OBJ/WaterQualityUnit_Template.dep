@@ -1,6 +1,6 @@
 Dependencies for Project 'WaterQualityUnit', Target 'Template': (DO NOT MODIFY !)
-F (.\main.c)(0x5CB80A42)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (main.h)(0x5CB7CF4D)
+F (.\main.c)(0x5CB84E95)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -25,12 +25,12 @@ I (F:\KEIL\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (F:\KEIL\ARM\ARMCC\include\math.h)(0x599ECD2E)
 I (F:\KEIL\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
@@ -67,7 +67,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x504F415E)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 F (..\HARDWARE\LED\led.c)(0x5CB8036B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x5CB801F0)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -95,7 +95,7 @@ I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
@@ -104,9 +104,9 @@ I (F:\KEIL\ARM\ARMCC\include\ctype.h)(0x599ECD2E)
 I (..\HARDWARE\USART3\usart3.h)(0x5CB73D27)
 I (..\HARDWARE\OLED\oled.h)(0x5CB7D301)
 I (..\HARDWARE\DHT11\dht11.h)(0x5CB7C922)
-F (..\HARDWARE\TIMER\timer.c)(0x5CB7CD77)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x5CB84D25)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -134,7 +134,7 @@ I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
@@ -170,7 +170,7 @@ I (F:\KEIL\ARM\ARMCC\include\math.h)(0x599ECD2E)
 I (F:\KEIL\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 F (..\HARDWARE\timercallback_func\Timer_callback_func.c)(0x5CB7CFA3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer_callback_func.o --omf_browse ..\obj\timer_callback_func.crf --depend ..\obj\timer_callback_func.d)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -198,7 +198,7 @@ I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
 I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
@@ -207,8 +207,8 @@ I (F:\KEIL\ARM\ARMCC\include\ctype.h)(0x599ECD2E)
 I (..\HARDWARE\USART3\usart3.h)(0x5CB73D27)
 I (..\HARDWARE\OLED\oled.h)(0x5CB7D301)
 I (..\HARDWARE\DHT11\dht11.h)(0x5CB7C922)
-F (..\HARDWARE\KEY\key.c)(0x5C94F9AD)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+F (..\HARDWARE\KEY\key.c)(0x5CB84DA1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -234,7 +234,7 @@ I (F:\KEIL\ARM\ARMCC\include\math.h)(0x599ECD2E)
 I (F:\KEIL\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 F (..\HARDWARE\USART3\usart3.c)(0x5CB73DE1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
 I (..\HARDWARE\USART3\usart3.h)(0x5CB73D27)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -263,7 +263,7 @@ I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
@@ -296,7 +296,7 @@ I (..\SYSTEM\usart\usart.h)(0x597C9C03)
 I (F:\KEIL\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (F:\KEIL\ARM\ARMCC\include\math.h)(0x599ECD2E)
 I (F:\KEIL\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
-I (..\HARDWARE\OLED\oledfont.h)(0x5CB808A4)
+I (..\HARDWARE\OLED\oledfont.h)(0x5CB84D25)
 F (..\HARDWARE\DHT11\dht11.c)(0x5CB7C922)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\USER -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\TIMER -I ..\HARDWARE\ADC+DMA -I ..\HARDWARE\timercallback_func -I ..\HARDWARE\KEY -I ..\HARDWARE\USART3 -I ..\GAgent\Gizwits -I ..\GAgent\Utils -I ..\HARDWARE\OLED -I ..\HARDWARE\DHT11-I.\RTE\_Template-IF:\KEIL\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IF:\KEIL\ARM\CMSIS\Include-D__UVISION_VERSION="527" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\dht11.o --omf_browse ..\obj\dht11.crf --depend ..\obj\dht11.d)
 I (..\HARDWARE\DHT11\dht11.h)(0x5CB7C922)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
@@ -327,7 +327,7 @@ I (F:\KEIL\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
 I (F:\KEIL\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -353,7 +353,7 @@ I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
 I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
 I (..\GAgent\Utils\common.h)(0x5C796DA4)
@@ -368,7 +368,7 @@ I (F:\KEIL\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (F:\KEIL\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (F:\KEIL\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\GAgent\Gizwits\gizwits_product.h)(0x5CB7C5AA)
-I (..\USER\main.h)(0x5CB7CF4D)
+I (..\USER\main.h)(0x5CB83C9C)
 I (..\SYSTEM\sys\sys.h)(0x5AD5B729)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -393,7 +393,7 @@ I (..\HARDWARE\TIMER\timer.h)(0x5CB73C69)
 I (..\HARDWARE\LED\led.h)(0x5CB801F0)
 I (..\HARDWARE\timercallback_func\Timer_callback_func.h)(0x5CB7CFA3)
 I (..\HARDWARE\ADC+DMA\adc.h)(0x5B05448A)
-I (..\HARDWARE\KEY\key.h)(0x5C94ED49)
+I (..\HARDWARE\KEY\key.h)(0x5CB83C9C)
 I (..\GAgent\Gizwits\gizwits_protocol.h)(0x5CB7C9B1)
 I (F:\KEIL\ARM\ARMCC\include\stdbool.h)(0x599ECD2E)
 I (..\GAgent\Utils\common.h)(0x5C796DA4)

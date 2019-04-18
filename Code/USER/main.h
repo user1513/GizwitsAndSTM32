@@ -35,7 +35,7 @@ typedef enum
 #include "usart3.h"
 #include "oled.h"
 #include "dht11.h"
-
+#include "key.h"
 #endif
 
 
